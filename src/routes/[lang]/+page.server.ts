@@ -13,6 +13,7 @@ export async function load({params}) {
   if (!env?.formattedName) await loadEnv()
 
   return {
+    params,
     env,
   };
 }

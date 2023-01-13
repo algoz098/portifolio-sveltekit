@@ -1,0 +1,54 @@
+import { init } from '../serverless.js';
+
+export const handler = init({
+	appDir: "_app",
+	appPath: "_app",
+	assets: new Set(["favicon.svg"]),
+	mimeTypes: {".svg":"image/svg+xml"},
+	_: {
+		entry: {"file":"_app/immutable/start-5dd29062.js","imports":["_app/immutable/start-5dd29062.js","_app/immutable/chunks/index-1704f101.js","_app/immutable/chunks/singletons-3d409f81.js","_app/immutable/chunks/index-39084353.js"],"stylesheets":[],"fonts":[]},
+		nodes: [
+			() => import('../server/nodes/0.js'),
+			() => import('../server/nodes/1.js'),
+			() => import('../server/nodes/2.js'),
+			() => import('../server/nodes/3.js'),
+			() => import('../server/nodes/4.js'),
+			() => import('../server/nodes/5.js'),
+			() => import('../server/nodes/6.js')
+		],
+		routes: [
+			{
+				id: "/",
+				pattern: /^\/$/,
+				params: [],
+				page: { layouts: [0], errors: [1], leaf: 3 },
+				endpoint: null
+			},
+			{
+				id: "/[lang]",
+				pattern: /^\/([^/]+?)\/?$/,
+				params: [{"name":"lang","optional":false,"rest":false,"chained":false}],
+				page: { layouts: [0,2], errors: [1,,], leaf: 4 },
+				endpoint: null
+			},
+			{
+				id: "/[lang]/labs",
+				pattern: /^\/([^/]+?)\/labs\/?$/,
+				params: [{"name":"lang","optional":false,"rest":false,"chained":false}],
+				page: { layouts: [0,2], errors: [1,,], leaf: 5 },
+				endpoint: null
+			},
+			{
+				id: "/[lang]/work",
+				pattern: /^\/([^/]+?)\/work\/?$/,
+				params: [{"name":"lang","optional":false,"rest":false,"chained":false}],
+				page: { layouts: [0,2], errors: [1,,], leaf: 6 },
+				endpoint: null
+			}
+		],
+		matchers: async () => {
+			
+			return {  };
+		}
+	}
+});

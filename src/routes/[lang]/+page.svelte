@@ -1,22 +1,22 @@
 <script>
   import favicon from '$lib/images/avatar.png'
-  import {locale, localeName} from '$lib/loadLang'
+  import loadLang, {locale, localeName} from '$lib/loadLang'
 
   /** @type {import('./$types').PageData} */
   export let data;
-  const {env} = data
+  const {env, params} = data
 
   let t;
 	locale.subscribe(value => {
 		t = value;
 	});
 
-  let tName;
+  let tName = params.lang;
 	localeName.subscribe(value => {
 		tName = value;
 	});
-
-  const knowMoreLink = `/${localeName}/work`
+  const knowMoreLink = `/${tName}/work`
+  loadLang(params.lang)
 </script>
 <svelte:head>
   <link rel="icon" href={favicon} />
@@ -55,7 +55,6 @@
     <a href="https://api.whatsapp.com/send?phone=5516996160622" class="px-14 py-6 text-3xl mr-12 bg-indigo-500">
       {t.hireMe}
     </a>
-
     <a href={knowMoreLink} class="px-14 py-6 text-3xl mr-12 bg-gray-800 opacity-50">
         {t.knowMore}
     </a>

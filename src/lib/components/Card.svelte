@@ -4,6 +4,8 @@
   export let description;
   export let html = false;
   export let href;
+  import { page } from '$app/stores';
+  const {params} = $page.data
 
   import {locale, localeName} from '$lib/loadLang'
   let t;
@@ -11,7 +13,7 @@
 		t = value;
 	});
 
-  let tName;
+  let tName = params.lang;
 	localeName.subscribe(value => {
 		tName = value;
 	});
@@ -38,7 +40,7 @@
 
       <div class="h-40 leading-4 overflow-hidden text-ellipsis text-justify">
         {#if html}
-          <small class="text-lg  line-clamp-6" set:html={description} />
+          <small class="text-lg  line-clamp-6" >{@html description} </small>
         {:else}
           <small class="text-lg  line-clamp-6">
             {description}
@@ -80,7 +82,7 @@
 
             <div class="leading-4 overflow-hidden text-left">
               {#if html}
-                <small class="text-lg" set:html={description} />
+                <small class="text-lg" >{@html description} </small>
               {:else}
                 <small class="text-lg">
                   {description}

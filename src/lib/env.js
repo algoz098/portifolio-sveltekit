@@ -95,12 +95,9 @@ export let env = null;
 
 function request () {
   return new Promise((resolve, reject) => {
-    console.log(888)
     setTimeout(() => {
       env = json
       resolve(json)
-      console.log(777)
-
     }, 0)
   })
 }

@@ -1,6 +1,6 @@
 <script>
   import { page } from '$app/stores';
-  const {env} = $page.data
+  const {env, params} = $page.data
 
   import Avatar from '$lib/images/avatar.png'
   import Social from '$lib/images/social.png'
@@ -9,16 +9,13 @@
   import LangChanger from '$lib/components/LangChanger.svelte'
 
   import {locale, localeName} from '$lib/loadLang'
-  let t;
+
+  let t = {};
 	locale.subscribe(value => {
 		t = value;
 	});
 
-  let tName;
-	localeName.subscribe(value => {
-		tName = value;
-	});
-
+  let tName = params.lang;
   const aboutHref = `/${tName}`
   const workHref = `/${tName}/work`
   const labsHref = `/${tName}/labs`
