@@ -18,7 +18,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.data(data);
   return `${$$result.head += `<!-- HEAD_svelte-1f0ai17_START --><link rel="${"icon"}"${add_attribute("href", favicon, 0)}>${$$result.title = `<title>${escape(data.env.formattedName)} - ${escape(t.work)}</title>`, ""}<meta name="${"description"}" content="${"sobre"}"><!-- HEAD_svelte-1f0ai17_END -->`, ""}
 
-<pre>${escape(JSON.stringify(images, 0, 2))}</pre>
 <main class="${"grid grid-flow-row-dense grid-cols-3 gap-2 pb-2 pt-14"}">${each(env.data.companies.list, (company) => {
     return `${validate_component(Card, "Card").$$render(
       $$result,
@@ -26,7 +25,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         title: company.title,
         description: company.description[tName.toLowerCase().replaceAll("-", "")],
         href: company.url,
-        img: images[company.title.toLowerCase().replaceAll(" ", "")]
+        img: `/${company.title.toLowerCase().replaceAll(" ", "")}.png`
       },
       {},
       {}

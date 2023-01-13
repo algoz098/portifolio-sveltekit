@@ -13,10 +13,11 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   locale.subscribe((value) => {
     t = value;
   });
-  params.lang;
+  let tName = params.lang;
   localeName.subscribe((value) => {
+    tName = value;
   });
-  const knowMoreLink = `/${localeName}/work`;
+  const knowMoreLink = `/${tName}/work`;
   loadLang(params.lang);
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
@@ -35,7 +36,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         <strong class="${"text-indigo-500"}">${escape(t.js)}</strong></p></div></div>
 
   <div class="${"mt-32 mb-36"}"><a href="${"https://api.whatsapp.com/send?phone=5516996160622"}" class="${"px-14 py-6 text-3xl mr-12 bg-indigo-500"}">${escape(t.hireMe)}</a>
-
     <a${add_attribute("href", knowMoreLink, 0)} class="${"px-14 py-6 text-3xl mr-12 bg-gray-800 opacity-50"}">${escape(t.knowMore)}</a></div>
 
   <div class="${"flex flex-row items-center"}"><div class="${"text-xl w-24 text-indigo-500 mr-14 relative prev-clients svelte-5ec0s8"}">${escape(t.projects)}</div>

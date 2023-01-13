@@ -34,7 +34,6 @@
       "_index3.js",
       "_stores.js",
       "_avatar.js",
-      "_social.js",
       "_loadLang.js"
     ],
     "css": [
@@ -127,20 +126,10 @@
     "src": "src/routes/[lang]/work/+page.server.ts",
     "isEntry": true,
     "imports": [
-      "_avatar.js",
-      "_social.js",
       "_index3.js",
       "_env.js",
       "_loadLang.js",
       "_index.js"
-    ],
-    "assets": [
-      "_app/immutable/assets/bg_avatar-bbca0d0b.png",
-      "_app/immutable/assets/geekhive-9f1a4c6d.png",
-      "_app/immutable/assets/ionarydevllc-72414d3a.png",
-      "_app/immutable/assets/pinterest-9348b317.png",
-      "_app/immutable/assets/platformpurple-3d8bf40d.png",
-      "_app/immutable/assets/rhizatech-7e6a3ecf.png"
     ]
   },
   ".svelte-kit/generated/server-internal.js": {
@@ -180,9 +169,6 @@
     "assets": [
       "_app/immutable/assets/avatar-ab19756d.png"
     ]
-  },
-  "_social.js": {
-    "file": "chunks/social.js"
   },
   "_loadLang.js": {
     "file": "chunks/loadLang.js",

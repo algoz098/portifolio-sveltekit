@@ -1,9 +1,9 @@
 import { c as create_ssr_component, b as subscribe, d as add_attribute, e as escape, v as validate_component } from "../../../chunks/index3.js";
 import { p as page } from "../../../chunks/stores.js";
 import { f as favicon } from "../../../chunks/avatar.js";
-import { S as Social } from "../../../chunks/social.js";
-import { l as locale, a as localeName } from "../../../chunks/loadLang.js";
+import { l as locale } from "../../../chunks/loadLang.js";
 const styles = "";
+const Social = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAABqUlEQVRIibXV624TMRAF4C+mjZqktCAoAioB7/9WXCuVe9KQtE2z/LBdNnai7hY40sryZY/HM2dmBk3T+F/Y63F2HwM0uP5b8oBjHGGUiDMaLDDFT6y3EQx2uOUxTvCgg4E3+IJvd5EHnOKwA2mJOT6myyrygFeiC+6LJd5KbgqtjRct4mX6uhLmswd4mTdyQB+Kgcs4F585En2/xlUaA4Zp/CwGdozXBdc0kz8rrFmlcYF3HawvpXmCWcAkWdJGH/0Tc6CNISZBrYxL/OpJvlDH6DCo1fFdTJI+aNQ6H+XgtNFVJSUui/kw2Ezrf4kQ1HWhDE5XlP/dBLWMJvckHxfz66D28bE6DndhiEfF2iJgViwO9Ksxo3Q+FOsXe2KaX6Xbz9L4BG9Evc/Fmt123774wonaHRLfRb7tPI3PE2HW7Fis7avNf61EN2wjJtac2zSfiV3lSKwLH9LtB+myMqlyJ9qmrMy1UUPO0uERnibrpzss24UlPuVJl040FTtMiVObZXouvvg2b8rqt8Z7/XroWuyhX8uNXQ2aP91/pZYrsSns44cd3f83P21xSROEqxYAAAAASUVORK5CYII=";
 const AMenuItem_svelte_svelte_type_style_lang = "";
 const css$1 = {
   code: ".active.svelte-p4kql{padding-left:56px\n  }",
@@ -39,10 +39,10 @@ const LangChanger = create_ssr_component(($$result, $$props, $$bindings, slots) 
   if ($$props.tooltip === void 0 && $$bindings.tooltip && tooltip !== void 0)
     $$bindings.tooltip(tooltip);
   $$result.css.add(css);
-  return `<button class="${"hover:text-gray-600 cursor-pointer lang svelte-1szgoxz"}">${escape(lang)}
+  return `<a${add_attribute("href", `/${lang}`, 0)} class="${"hover:text-gray-600 cursor-pointer lang svelte-1szgoxz"}">${escape(lang)}
 
   <span class="${"tooltiptext svelte-1szgoxz"}">${escape(tooltip)}</span>
-</button>`;
+</a>`;
 });
 const AMenu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $page, $$unsubscribe_page;
@@ -53,9 +53,6 @@ const AMenu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     t = value;
   });
   let tName = params.lang;
-  localeName.subscribe((value) => {
-    tName = value;
-  });
   const aboutHref = `/${tName}`;
   const workHref = `/${tName}/work`;
   const labsHref = `/${tName}/labs`;

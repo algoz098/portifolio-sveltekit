@@ -33,7 +33,7 @@
       title={company.title}
       description={company.description[tName.toLowerCase().replaceAll('-', '')]}
       href={company.url}
-      img={images[company.title.toLowerCase().replaceAll(' ', '')]}
+      img={`/${company.title.toLowerCase().replaceAll(' ', '')}.png`}
     />
   {/each}
 </main>
